@@ -1,11 +1,39 @@
+from random import choice
+
+all_colors = ['white', 'yellow', 'red','green','purple','orange', 'blue']
+used_colors=[]
+size = 50
+
+def chose_color():
+    global all_colors,used_colors
+    avalable = list(set(all_colors)-set(used_colors))
+    color = choice(avalable)
+    used_colors.append(color)
+    if used_colors.lenght== all_colors.length : 
+        used_colors = []
+    return color
 
 
+    
 
 
+def make_line(case,background,direction, x_start,y_start,number):
+    if direction=='h':
+        for x in range(x_start, x_start+size*number):
+            case.append( background.create_rectangle(x, y_start, x+50, y_start+50, fill = chose_color) )         # 0
+    else :
+        for y in range(y_start, y_start+size*number):
+            case.append( background.create_rectangle(x, y_start, x+50, y_start+50, fill = chose_color) )         # 0
 
+def make_square(case,background,x_center,y_center):
+    for x in range(x_center-size,x_center+size):
+        for y in range(y_center-size,y_center+size):
+            if (x,y != x_center,y_center):
+               case.append( background.create_rectangle(x, y, x+size, y+size, fill = chose_color) )         # 0
+  
+            
 def makebackground(background):
 
-    colors = ['white', 'yellow', 'red','green','purple','orange', 'blue']
     case = [ ]
     case.append( background.create_rectangle(30, 750, 100, 800, fill = 'white') )         # 0
 
