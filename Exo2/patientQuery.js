@@ -4,4 +4,4 @@ function getPatientList() {
     return patientQueryDAO.retrievePatientList()
 }
 
-module.export={getPatientList};
+module.exports={getPatientList};
