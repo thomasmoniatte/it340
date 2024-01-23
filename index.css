@@ -1,0 +1,74 @@
+:root{
+    --textcolor : green;
+    --padding-small : 20px;
+    --padding-big : 40px;
+    --fontsize-big: 2em;
+    --fontsize-med: 2em;
+    --fontsize-petit: 1em;
+    
+}
+
+
+@keyframes font-slide {
+    from {
+      text-align: start;
+    }
+    
+    50% {
+      text-align: center;
+    }
+    
+    to {
+      text-align: end;
+    }
+  }
+
+html{
+    font-size: 100%;
+}
+
+.header {
+    height: 5rem;
+    width: 50%;
+    padding: var(--padding-small);
+    border: 2px solid blue;
+    color: var(--textcolor);
+    font-size:clamp(32px,var(--fontsize-big),80px);
+/*    animation: font-slide 2s linear  infinite;
+*/}
+    /* fichier sidebar.css */
+.sidebare{
+    height:100%;
+    background-color: aqua;
+    width: 10%;
+}
+    /* fichier section.css */
+
+.flexbox{
+    display: flex;
+}
+.section {
+    padding: var(--padding-big);
+    border: 2px solid orange;
+    font-size: var(--fontsize-med);
+}
+
+
+
+    /* fichier footer.css */
+
+.footer {
+    padding: var(--padding-small);
+    border: 2px solid blue;
+    color: var(--textcolor);
+    font-size: var(--fontsize-petit);
+    text-align: end;
+}
+@media (prefers-reduced-motion) {
+    .header{
+
+        animation: none;
+    }
+    /* styles to apply if a user's device settings are set to reduced motion */
+  }
+  
